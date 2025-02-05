@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprised? 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <div class="background">
+        <div class="heart" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
+        <div class="heart" style="top: 50%; left: 60%; animation-delay: 2s;"></div>
+        <div class="heart" style="top: 30%; left: 80%; animation-delay: 4s;"></div>
+    </div>
+
+    <div class="interactive-hearts" id="interactiveHearts"></div>
+    <div class="love-background"></div>
+    <div class="love-notes" id="loveNotes"></div>
+
+    <div class="container">
+        <h1>Hey Meesha! 💖</h1>
+        
+       
+        <div class="paper letter-paper">
+            <div class="letter-content">
+                <p class="letter-text collapsed">
+                    My dearest Meesha,<br><br>
+                    My beautiful, smart, sexilicious girlfriend, I love you and wanted to express my deep love for you. 
+                    <span class="letter-text-full" style="display:none;">
+                    I'm sorry for how late this was, but I was conflicted about the best way to do this. 
+                    I kind of never know what to say for these, so I'll keep it short and sweet, my love.<br><br>
+                    Will you be my Valentine?
+                    </span>
+                    <button class="btn-expand-letter">Read More ↓</button>
+                </p>
+                <div class="response-buttons">
+                    <button class="btn-yes" data-response="yes">Yes 💖</button>
+                    <button class="btn-no" data-response="no">No 😢</button>
+                </div>
+                <div class="response-message"></div>
+            </div>
+        </div>
+        <div class="paper image">
+          <p> I Love you</p>
+          <p>So so much 😍 </p>
+          <img src="images/m4.jpg" />
+        </div>
+        <div class="paper image">
+          <img src="images/M2.jpg" />
+        </div>
+        <div class="paper image">
+          <p>Just Look </p>
+          <p> You're so cute ❤️ </p>
+          <img src="images/m5.jpg" />
+        </div>
+        <div class="paper red">
+          <p class="p1">My Favorite</p>
+          <p class="p2">Person 💍</p>
+        </div>
+        <div class="paper">
+          <p class="p1">My Baby </p>
+          <p class="p1">got you good<span style="color: red !important;">❤️</span></p>
+        </div>
+        <div class="paper">
+          <p class="p1">Drag the papers to move!</p>
+        </div>
+
+        <div class="footer">Countdown to Valentine's Day: <span id="countdown">Loading...</span></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+:root {
+    --pink: #ff69b4;
+    --red: #ff3366;
+    --light-pink: #ffc0cb;
+    --white: #fff0f5;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, var(--light-pink), var(--pink));
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--white);
+    position: relative;
+    z-index: 2;
+}
+
+.container h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 5rem;
+    margin: 2rem;
+    text-shadow: 3px 3px var(--red);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.paper {
+  background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
+  background-size: 500px;
+  background-position: center center;
+  padding: 20px 100px;
+  transform: rotateZ(-5deg);
+  box-shadow: 1px 15px 20px 0px rgba(0,0,0,0.5);
+  position: absolute;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  cursor: grab;
+  will-change: transform;
+}
+
+.paper:active {
+  cursor: grabbing;
+}
+
+.paper.heart {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.paper.image {
+  padding: 10px;
+}
+
+.paper.image p {
+  font-size: 30px;
+}
+
+img {
+  max-height: 200px;
+  width: 100%;
+  user-select: none;
+}
+
+
+p {
+  font-family: 'Zeyada';
+  font-size: 50px;
+  color: rgb(0,0,100);
+  opacity: 0.75;
+  user-select: none;
+}
+/* Sparkles & Hearts */
+.heart-effect {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    animation: sparkle 1s infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.8); opacity: 0.5; }
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 2em;
+    animation: float 4s infinite;
+    filter: drop-shadow(0 0 8px rgba(255,105,180,0.5));
+}
+.floating-element {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  animation: float 6s infinite ease-in-out;
+  will-change: transform, opacity;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-10deg); }
+    50% { transform: translateY(-50px) rotate(10deg); }
+}
+
+.footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: var(--white);
+    font-size: 1.2rem;
+    z-index: 3;
+}
+
+/* Letter Paper Styles */
+.letter-paper {
+  width: 450px;
+  min-height: 500px;
+  padding: 40px;
+  background: linear-gradient(135deg, #fff0f5 0%, #ffe5ec 100%);
+  border: 3px solid var(--red);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden; 
+  z-index: 1;
+}
+
+.letter-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.letter-text {
+  font-family: 'Caveat', cursive;
+  font-size: 2.2rem;
+  color: #cc0066;
+  line-height: 1.4;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Letter Text Expansion Styles */
+.letter-text {
+    position: relative;
+}
+
+.btn-expand-letter {
+    display: inline-block;
+    margin-left: 10px;
+    background: none;
+    border: 1px solid var(--red);
+    color: var(--red);
+    padding: 2px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-expand-letter:hover {
+    background-color: var(--red);
+    color: white;
+}
+
+.letter-text-full {
+    display: none;
+}
+
+/* Button Styles */
+.response-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.btn-yes, .btn-no {
+  padding: 15px 40px;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.btn-yes {
+  background: linear-gradient(45deg, #ff69b4, #ff3366);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255,51,102,0.3);
+}
+
+.btn-yes:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(255,51,102,0.4);
+}
+
+.btn-no {
+  background: linear-gradient(45deg, #ff3366, #ff1493);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255,51,102,0.3);
+}
+
+.btn-no:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(255,51,102,0.4);
+}
+
+.btn-no.leave-animation {
+  animation: leave-container 1s ease-in-out forwards;
+}
+
+@keyframes leave-container {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(100px, -50px) rotate(20deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(200px, -100px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Response Message */
+.response-message {
+  font-family: 'Caveat', cursive;
+  font-size: 2.5rem;
+  color: #ff0066;
+  text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+  margin-top: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  min-height: 60px; 
+}
+
+.response-message.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.heart-confetti {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: confetti-fall 3s ease-out infinite;
+    z-index: 10000;
+}
+
+@keyframes confetti-fall {
+    0% { transform: translateY(-100%) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(720deg); }
+}
+
+.heart-confetti {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: confetti-fall 3s ease-out infinite;
+  z-index: 10000;
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-100%) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(720deg); }
+}
+
+.floating-heart {
+  position: fixed;
+  font-size: 2rem;
+  bottom: -50px;
+  animation: float-up 3s ease-out;
+}
+
+@keyframes float-up {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+}
+
+/* Ensure smooth scaling */
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
