@@ -150,6 +150,7 @@ p {
   position: relative;
   overflow: hidden; 
   z-index: 1;
+    margin-bottom:2rem;
 }
 
 .letter-content {
